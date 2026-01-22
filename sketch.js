@@ -43,6 +43,7 @@ function preload() {
 
 function setup() {
   createCanvas(1920, 1080);
+  pixelDensity(window.devicePixelRatio); // 或 pixelDensity(2);
   textFont(fontText); // 默认正文
   
   textSize(36); fill(0);
@@ -53,7 +54,7 @@ function drawUIFrame() {
   noStroke();
   fill(255, 200);
   rect(
-    60, 700, 400, 320, 24
+    60, 730, 400, 300, 24
   );
   pop();
 }

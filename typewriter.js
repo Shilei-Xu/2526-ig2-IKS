@@ -1,6 +1,3 @@
-// typewriter.js
-
-
 let lastTime = 0;
 let interval = 60;
 

@@ -5,6 +5,38 @@ let bubble;
 
 let pages = [
     {
+        id: "02-01",
+        layout: "solo",
+        bg: "bg_f1",
+        texts: [
+            {
+                content: "Chapter 2",
+                font: "ui",
+                size: 70,
+                y: 210
+            },
+            {
+                content: "The Hunt",
+                font: "ui",
+                size: 200,
+                y: 350
+            },
+            {
+                content: "05 : 30 AM   River camp",
+                size: 60,
+                y: 670
+            },
+            {
+                content: "Continue",
+                font: "ui",
+                size: 60,
+                y: 780
+            }
+        ],
+        keys: { next: "n", prev: "p" }
+    },
+
+    {
         id: "01-01",
         layout: "solo",
         bg: "bg_f2",
@@ -13,7 +45,7 @@ let pages = [
                 content: "Chapter 1",
                 font: "ui",
                 size: 70,
-                y: 200
+                y: 210
             },
             {
                 content: "Wake up ",
@@ -24,10 +56,21 @@ let pages = [
             {
                 content: "05 : 30 AM   River camp",
                 size: 60,
-                y: 680
+                y: 670
+            },
+            {
+                content: "Continue",
+                font: "ui",
+                size: 60,
+                y: 780
             }
         ],
-        keys: { next: "n", prev: "p" }
+        keys: {
+            next: "n",
+            nextId: "02-01",   //id of the next page
+            prev: "p",
+            prevId: null
+        }
     },
     {
         id: "01-02",
@@ -50,7 +93,5 @@ let pages = [
         text: "Nice! Your new stone tool is ready to use!\nTime to move on! Flip the page to start the next chapter. ",
         keys: { next: "n", prev: "p" }
     },
-
-
 ];
 
