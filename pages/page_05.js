@@ -70,11 +70,11 @@ const pages_05 = [
             scale: 1.5,      // 缩放
             breathe: true    // 是否启用轻微上下浮动
         },
-        text: "We should make some paint to capture today’s experiences.\nLet’s pick an ingredient that could work for RED dye.",
+        text: "We should make some paint to capture today's experiences.\nLet’s pick an ingredient that could work for RED dye.",
         textMode: "instant",
         keys: {
             next: "n",
-            nextId: "05-04",   //id of the next page
+            nextId: "05-06",   //id of the next page
             prev: "p",
             prevId: "05-02"
         }

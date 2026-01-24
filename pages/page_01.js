@@ -1,5 +1,5 @@
 const pages_01 = [
- {
+    {
         id: "01-01",
         layout: "solo",
         bg: "bg_f2",
@@ -126,5 +126,5 @@ const pages_01 = [
             prevId: "01-04"
         }
     },
-    
+
 ];

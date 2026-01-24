@@ -158,6 +158,32 @@ function drawChoiceLayout(page) {
     }
 }
 
+// 5.尼人对话布局
+function drawDialogLayout(page) {
+    let t = millis() * 0.003;
+    let breatheY = sin(t * 0.8) * 2;   // 2px 的轻微上下浮动
+
+    drawImageContain(images.nean_4, 750 + breatheY, 250, 500, 400, 1);
+    drawImageContain(images.homo_9, 950 - breatheY, 400, 800, 400, 1.5);
+    drawImageContain(images.ui_1, 1300, 700, 1000, 800, 0.5);
+    drawImageContain(images.ui_1, 1300, 550, 1000, 800, 0.5);
+    drawImageContain(images.ui_1, 100, 200, 800, 800, 0.8);
+
+    //3个文本框
+    textAlign(LEFT, TOP);
+    textSize(28);
+    fill(0); // 按你的画面风格调整
+
+    // 上框
+    text(page.texts.top || "", 150, 250, 800, 800,);
+
+    // 中框
+    text(page.texts.middle || "", 1330, 580, 1000, 800);
+
+    // 下框
+    text(page.texts.bottom || "", 1330, 750, 1000, 800);
+
+}
 
 function drawExploreLayout(page) {
     image(images.homo_1, 600, 500);

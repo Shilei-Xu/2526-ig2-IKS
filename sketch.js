@@ -29,6 +29,12 @@ function preload() {
   images.homo_8 = loadImage("assets/Homo_Sapiens/crouching_crafting.png");
   images.homo_9 = loadImage("assets/Homo_Sapiens/back_with_bow.png");
 
+  images.nean_1 = loadImage("assets/Neanderthals/sitting_neanderthal_happy_end.png");
+  images.nean_2 = loadImage("assets/Neanderthals/neanderthal_3.png");
+  images.nean_3 = loadImage("assets/Neanderthals/neanderthal_2.png");
+  images.nean_4 = loadImage("assets/Neanderthals/neanderthal_1.png");
+  images.nean_5 = loadImage("assets/Neanderthals/conflict.png");
+
   images.ui_1 = loadImage("assets/UI/text_leather_small.png");
   images.ui_2 = loadImage("assets/UI/text_leather_large.png");
   images.ui_3 = loadImage("assets/UI/ui_1.png");
@@ -99,7 +105,7 @@ function draw() {
     case "solo": drawSoloLayout(page); break;
     case "info": drawInfoLayout(page); break;
     case "choice": drawChoiceLayout(page); break;
-    case "explore": drawExploreLayout(page); break;
+    case "dialog": drawDialogLayout(page); break;
     case "special": drawSpecialLayout(page); break;
   }
 }

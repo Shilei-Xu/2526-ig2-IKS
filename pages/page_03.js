@@ -32,7 +32,7 @@ const pages_03 = [
         ],
         keys: {
             next: "n",
-            nextId: "04-01",   //id of the next page
+            nextId: "03-02",   //id of the next page
             prev: "p",
             prevId: "02-01"
         }
@@ -54,7 +54,7 @@ const pages_03 = [
         textMode: "instant",
         keys: {
             next: "n",
-            nextId: "03-03",   //id of the next page
+            nextId: "03-05",   //id of the next page
             prev: "p",
             prevId: "03-01"
         }
@@ -79,6 +79,54 @@ const pages_03 = [
             nextId: "03-06",   //id of the next page
             prev: "p",
             prevId: "03-04"
+        }
+    },
+    {
+        id: "03-06",
+        layout: "dialog",
+        bg: "bg_f1",
+        texts: {
+            top: "Who are you? \nWhy are you here?",
+            middle: "We mean no harm, just passing through.",
+            bottom: "None of your business!"
+        },
+        keys: {
+            next: "n",
+            nextId: "03-07",   //id of the next page
+            prev: "p",
+            prevId: "03-05"
+        }
+    },
+    {
+        id: "03-07",
+        layout: "dialog",
+        bg: "bg_f1",
+        texts: {
+            top: "We saw you following the rabbits… \nAre you hunting our prey?",
+            middle: "We caught just one, we share what we find.",
+            bottom: "We need food, stay out of our way!"
+        },
+        keys: {
+            next: "n",
+            nextId: "03-08",   //id of the next page
+            prev: "p",
+            prevId: "03-06"
+        }
+    },
+     {
+        id: "03-08",
+        layout: "dialog",
+        bg: "bg_f1",
+        texts: {
+            top: "Do we work together or defend ourselves?",
+            middle: "Let's help each other —\nwe can survive better together.",
+            bottom: "We'll fight if we must!"
+        },
+        keys: {
+            next: "n",
+            nextId: "03-09",   //id of the next page
+            prev: "p",
+            prevId: "03-07"
         }
     },
     {
