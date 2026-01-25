@@ -74,7 +74,7 @@ const pages_05 = [
         textMode: "instant",
         keys: {
             next: "n",
-            nextId: "05-06",   //id of the next page
+            nextId: "05-04",   //id of the next page
             prev: "p",
             prevId: "05-02"
         }
@@ -114,7 +114,7 @@ const pages_05 = [
         ],
         keys: {
             next: "n",
-            nextId: "05-05",   //id of the next page
+            nextId: "05-06",   //id of the next page
             prev: "p",
             prevId: "05-03"
         }
@@ -138,7 +138,7 @@ const pages_05 = [
             next: "n",
             nextId: "05-07",   //id of the next page
             prev: "p",
-            prevId: "05-05"
+            prevId: "05-06"
         }
     },
 

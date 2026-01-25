@@ -54,7 +54,7 @@ const pages_03 = [
         textMode: "instant",
         keys: {
             next: "n",
-            nextId: "03-05",   //id of the next page
+            nextId: "03-03",   //id of the next page
             prev: "p",
             prevId: "03-01"
         }
@@ -87,7 +87,7 @@ const pages_03 = [
 
         keys: {
             next: "n",
-            nextId: "03-04",
+            nextId: "03-05",
             prev: "p",
             prevId: "03-02"
         }

@@ -141,7 +141,7 @@ const pages_02 = [
         textMode: "instant",
         keys: {
             next: "n",
-            nextId: "02-07",   //id of the next page
+            nextId: "02-06",   //id of the next page
             prev: "p",
             prevId: "02-01"
         }
