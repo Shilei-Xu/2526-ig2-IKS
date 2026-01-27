@@ -3,6 +3,7 @@ let fontUI;
 let pages = [];
 let currentPage = 0;
 let images = {};
+let videos = {}; // 全局存视频对象
 
 
 function preload() {
@@ -65,6 +66,11 @@ function preload() {
   fontText = loadFont("assets/fonts/GamjaFlower-Regular.ttf");
   fontUI = loadFont("assets/fonts/FreckleFace-Regular.ttf");
 
+  videos.intro = createVideo("assets/Video/Animation_Höhle.mp4");
+  videos.intro.hide();      // 隐藏 DOM 元素，只用 canvas 绘制
+  videos.intro.loop();      // 循环播放
+  videos.intro.volume(0); // 静音
+  videos.intro.speed(2);
 }
 
 function setup() {
@@ -96,6 +102,7 @@ function drawUIFrame() {
 
 function draw() {
   background(0);
+  image(videos.intro, 0, 0, width, height);
   let page = pages[currentPage];
   // if (images[page.bg]) image(images[page.bg], 0, 0);
 
@@ -121,5 +128,6 @@ function draw() {
     case "choice": drawChoiceLayout(page); break;
     case "dialog": drawDialogLayout(page); break;
     case "display": drawDisplayLayout(page); break;
+    case "video": drawVideoLayout(page.video); break;
   }
 }

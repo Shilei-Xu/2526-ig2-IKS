@@ -1,4 +1,5 @@
 const pages_01 = [
+     
     {
         id: "01-01",
         layout: "solo",
@@ -98,12 +99,30 @@ const pages_01 = [
         textMode: "instant",
         keys: {
             next: "n",
-            nextId: "01-06",   //id of the next page
+            nextId: "01-05",   //id of the next page
             prev: "p",
             prevId: "01-03"
         }
     },
-
+{
+        id: "01-05",
+        layout: "video",
+       // bg: "bg_f1",
+      /*  video: {
+        key: "intro",
+        x: 0,
+        y: 0,
+        width: 960,
+        height: 540
+    }, */
+        keys: {
+            next: "n",
+            nextId: "01-06",   //id of the next page
+            prev: "p",
+            prevId: "01-04",
+           // playVideo: "m"  // 按 m 播放视频
+        }
+    },
     {
         id: "01-06",
         layout: "talk",
@@ -123,7 +142,7 @@ const pages_01 = [
             next: "n",
             nextId: "02-01",   //id of the next page
             prev: "p",
-            prevId: "01-04"
+            prevId: "01-05"
         }
     },
 

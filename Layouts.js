@@ -170,6 +170,7 @@ function drawDialogLayout(page) {
     drawImageContain(images.ui_1, 100, 200, 800, 800, 0.8);
 
     //3个文本框
+    push();
     textAlign(LEFT, TOP);
     textSize(28);
     fill(0); // 按你的画面风格调整
@@ -182,6 +183,7 @@ function drawDialogLayout(page) {
 
     // 下框
     text(page.texts.bottom || "", 1330, 750, 1000, 800);
+    pop();
 
 }
 
@@ -208,4 +210,24 @@ function drawDisplayLayout(page) {
         }
     }
 
+}
+
+
+
+// 7.视频布局
+
+function drawVideoLayout(videoData) {
+    if (!videoData) return;
+
+    // 创建视频对象（如果还没有创建过）
+    if (!videos[videoData.key]) {
+        videos[videoData.key] = createVideo(videoData.path);
+        videos[videoData.key].size(videoData.width, videoData.height);
+        videos[videoData.key].loop();  // 循环播放
+        videos[videoData.key].hide();  // 用 canvas 绘制，不显示 HTML 元素
+    }
+
+    // 绘制视频到 canvas
+    let v = videos[videoData.key];
+    image(v, videoData.x, videoData.y, videoData.width, videoData.height);
 }

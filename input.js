@@ -38,6 +38,17 @@ function keyPressed() {
   if (key === keys.prev && keys.prevId) {
     goToPage(keys.prevId);
   }
+
+  // 播放视频逻辑
+    if (currentPage.layout === "video" && currentPage.video) {
+        if (key === currentPage.keys.playVideo) {
+            let v = videos[currentPage.video.key];
+            if (v) {
+                v.play();        // 开始播放
+                v.volume(1);     // 可选：恢复声音
+            }
+        }
+    }
 }
 
 
