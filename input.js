@@ -2,21 +2,50 @@ let selectedOptionIndex = -1;
 
 function goToPage(id) {
   let index = pages.findIndex(p => p.id === id);
+
   if (index !== -1) {
     currentPage = index;
     resetText();
 
-    // ⭐ 如果新页面是 choice，重置选择
+    let chapterNumber = int(id.split("-")[0]); // "02-01" → 2
+    playChapterBGM(chapterNumber);             // 🎵 自动切章节音乐
+
     if (pages[currentPage].layout === "choice") {
-      selectedOptionIndex = -1; // 或 0 作为默认选中
+      selectedOptionIndex = -1;
     }
+
   } else {
     console.warn("找不到页面 id:", id);
   }
 }
 
+
+function goToChapter(chapterNumber) {
+
+  playChapterBGM(chapterNumber);   // 🎵 切音乐
+
+  if (chapterNumber === 1) goToPage("01-01");
+  if (chapterNumber === 2) goToPage("02-01");
+  if (chapterNumber === 3) goToPage("03-01");
+  if (chapterNumber === 4) goToPage("04-01");
+  if (chapterNumber === 5) goToPage("05-01");
+}
+
+
 function keyPressed() {
+  
+
+ 
+
+  // 🌟 章节快捷键（优先级最高）
+  if (key === '1') { goToChapter(1); return; }
+  if (key === '2') { goToChapter(2); return; }
+  if (key === '3') { goToChapter(3); return; }
+  if (key === '4') { goToChapter(4); return; }
+  if (key === '5') { goToChapter(5); return; }
+
   let page = pages[currentPage];
+
 
   // 🌟 如果是 choice 页面，优先处理 1/2/3 选择
   if (page.layout === "choice" && page.options) {
@@ -40,15 +69,17 @@ function keyPressed() {
   }
 
   // 播放视频逻辑
-    if (currentPage.layout === "video" && currentPage.video) {
-        if (key === currentPage.keys.playVideo) {
-            let v = videos[currentPage.video.key];
-            if (v) {
-                v.play();        // 开始播放
-                v.volume(1);     // 可选：恢复声音
-            }
+   if (page.layout === "video" && page.video) {
+    if (key === page.keys.playVideo) {
+        let v = videos[page.video.key];
+        if (v) {
+            userStartAudio(); // 🔓 解锁音频
+            v.play();
+            v.volume(0);
         }
     }
+}
+
 }
 
 

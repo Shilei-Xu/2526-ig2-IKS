@@ -7,6 +7,8 @@ let videos = {}; // 全局存视频对象
 
 
 function preload() {
+  preloadBGM();   // 👈 加这一句
+  
   images.bg_f1 = loadImage("assets/Backgrounds/Feld_Nachmittag.png");
   images.bg_f2 = loadImage("assets/Backgrounds/Feld_Tag.png");
   images.bg_h1 = loadImage("assets/Backgrounds/Höhle_Nacht_Feuer.png");
