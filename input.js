@@ -34,9 +34,6 @@ function goToChapter(chapterNumber) {
 
 function keyPressed() {
   
-
- 
-
   // 🌟 章节快捷键（优先级最高）
   if (key === '1') { goToChapter(1); return; }
   if (key === '2') { goToChapter(2); return; }
@@ -45,6 +42,24 @@ function keyPressed() {
   if (key === '5') { goToChapter(5); return; }
 
   let page = pages[currentPage];
+
+  // 🌟 新增 whack3Keys 页面逻辑
+    if (page.layout === "hunt") {
+        const keyMap = page.keys.keyMap; // ["A","S","D"]
+        const index = keyMap.findIndex(k => k.toUpperCase() === key.toUpperCase());
+
+        if (index !== -1) {
+            const opt = page.options[index];
+            if (opt && opt.isPeek) {
+                // 命中 → 立即翻页
+                goToPage(page.keys.nextId);
+            } else {
+                // 没命中 → 可选反馈
+                console.log("Miss! Try again!");
+            }
+        }
+        return; // ⚠️ 命中或未命中都不执行原有翻页逻辑
+    }
 
 
   // 🌟 如果是 choice 页面，优先处理 1/2/3 选择

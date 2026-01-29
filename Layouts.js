@@ -169,7 +169,7 @@ function drawInfoLayout(page) {
 
 // 4.选择布局
 function drawChoiceLayout(page) {
-    console.log("drawing choice layout", page.id);
+   
     for (let i = 0; i < page.options.length; i++) {
         const opt = page.options[i];
 
@@ -269,4 +269,29 @@ function drawVideoLayout(videoData) {
     // 绘制视频到 canvas
     let v = videos[videoData.key];
     image(v, videoData.x, videoData.y, videoData.width, videoData.height);
+}
+
+//8.打兔子布局
+function drawHuntLayout(page) {
+
+    if (!page || !page.options || !Array.isArray(page.options)) return;
+
+    const t = millis();
+
+    page.options.forEach(opt => {
+        // 1️⃣ 底图永远画
+        if (images[opt.key]) {
+            drawImageContain(images[opt.key], opt.x, opt.y, opt.w, opt.h, 1);
+        }
+
+        // 2️⃣ 高亮固定节奏
+        const period = 2000;            // 2秒为周期
+        const isPeek = (t % period) < 1000;  // 前1秒显示高亮
+        opt.isPeek = isPeek;
+
+        // 3️⃣ 高亮叠加
+        if (isPeek && images[opt.highlightKey]) {
+            drawImageContain(images[opt.highlightKey], opt.x, opt.y, opt.w, opt.h, 1);
+        }
+    });
 }

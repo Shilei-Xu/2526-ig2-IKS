@@ -2,7 +2,7 @@ const pages_05 = [
     {
         id: "05-01",
         layout: "solo",
-        bg: "bg_h3",
+        bg: "bg_h2",
         texts: [
             {
                 content: "Chapter 5",
@@ -29,7 +29,7 @@ const pages_05 = [
             }
         ],
         keys: {
-            next: "n",
+            next: "c",
             nextId: "05-02",   //id of the next page
             prev: "p",
             prevId: "04-01"
@@ -82,7 +82,7 @@ const pages_05 = [
     {
         id: "05-04",
         layout: "choice",
-        bg: "bg_h1",
+        bg: "bg_h2",
         options: [
             {
                 key: "obj_4",          // 正常图片
@@ -91,7 +91,7 @@ const pages_05 = [
                 y: 450,
                 w: 300,
                 h: 300,
-                selectKey: "1"
+                selectKey: "q"
             },
             {
                 key: "obj_5",
@@ -100,7 +100,7 @@ const pages_05 = [
                 y: 450,
                 w: 300,
                 h: 300,
-                selectKey: "2"
+                selectKey: "w"
             },
             {
                 key: "obj_6",
@@ -109,7 +109,7 @@ const pages_05 = [
                 y: 450,
                 w: 300,
                 h: 300,
-                selectKey: "3"
+                selectKey: "e"
             }
         ],
         keys: {

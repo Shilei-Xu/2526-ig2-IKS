@@ -102,7 +102,7 @@ function drawUIFrame() {
   noStroke();
   fill(254, 236, 190, 220);
   rect(
-    10, 730, 450, 340, 12
+    10, 730, 480, 340, 12
   );
   pop();
 }
@@ -112,6 +112,8 @@ function draw() {
   background(0);
   image(videos.intro, 0, 0, width, height);
   let page = pages[currentPage];
+
+
   // if (images[page.bg]) image(images[page.bg], 0, 0);
 
   if (images[page.bg]) {
@@ -136,6 +138,9 @@ function draw() {
     case "choice": drawChoiceLayout(page); break;
     case "dialog": drawDialogLayout(page); break;
     case "display": drawDisplayLayout(page); break;
+    
     case "video": drawVideoLayout(page.video); break;
+    case "hunt": drawHuntLayout(page); break;
+
   }
 }

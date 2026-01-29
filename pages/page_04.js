@@ -2,7 +2,7 @@ const pages_04 = [
     {
         id: "04-01",
         layout: "solo",
-        bg: "bg_h1",
+        bg: "bg_f1",
         texts: [
             {
                 content: "Chapter 4",
@@ -29,10 +29,10 @@ const pages_04 = [
             }
         ],
         keys: {
-            next: "n",
+            next: "c",
             nextId: "04-02",   //id of the next page
             prev: "p",
-            prevId: "03-01"
+            prevId: "03-09"
         }
     },
     {
@@ -66,35 +66,35 @@ const pages_04 = [
                 key: "obj_1",          // 正常图片
                 highlightKey: "hlobj_1",  // 高亮图片（透明 PNG）
                 x: 400,
-                y: 500,
-                w: 300,
-                h: 300,
-                selectKey: "1"
+                y: 400,
+                w: 400,
+                h: 400,
+                selectKey: "q"
             },
             {
                 key: "obj_2",
                 highlightKey: "hlobj_2",
                 x: 800,
-                y: 500,
-                w: 300,
-                h: 300,
-                selectKey: "2"
+                y: 400,
+                w: 400,
+                h: 400,
+                selectKey: "w"
             },
             {
                 key: "obj_3",
                 highlightKey: "hlobj_3",
                 x: 1200,
-                y: 500,
-                w: 300,
-                h: 300,
-                selectKey: "3"
+                y: 400,
+                w: 400,
+                h: 400,
+                selectKey: "e"
             }
         ],
         keys: {
             next: "n",
             nextId: "04-04",   //id of the next page
             prev: "p",
-            prevId: "04-03"
+            prevId: "04-02"
         }
     },
     {
@@ -102,7 +102,7 @@ const pages_04 = [
         layout: "info",
         bg: "bg_f1",
         character: {
-            key: "obj_1",   // images 对象里的 key
+            key: "obj_2",   // images 对象里的 key
             x: 300,          // x 坐标
             y: 330,          // y 坐标
             maxW: 400,       // 最大宽度
@@ -122,12 +122,12 @@ const pages_04 = [
     {
         id: "04-05",
         layout: "display",
-        bg: "bg_h2",
+        bg: "bg_f1",
 
         images: [
             {
                 key: "nean_5",
-                x: 430,
+                x: 400,
                 y: 150,
                 maxW: 1000,
                 maxH: 800,
@@ -162,7 +162,7 @@ const pages_04 = [
             next: "n",
             nextId: "05-01",   //id of the next page
             prev: "p",
-            prevId: "04-01"
+            prevId: "04-05"
         }
     },
 

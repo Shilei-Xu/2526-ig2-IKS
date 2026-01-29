@@ -2,9 +2,9 @@ const pages_03 = [
     {
         id: "03-01",
         layout: "solo",
-        bg: "bg_h1",
-        bgScale: 1.2,
-  bgOffset: { x: -80, y: 0 },
+        bg: "bg_f2",
+        //bgScale: 1.2,
+        // bgOffset: { x: -80, y: 0 },
         texts: [
             {
                 content: "Chapter 3",
@@ -31,16 +31,16 @@ const pages_03 = [
             }
         ],
         keys: {
-            next: "n",
+            next: "c",
             nextId: "03-02",   //id of the next page
             prev: "p",
-            prevId: "02-01"
+            prevId: "02-07"
         }
     },
     {
         id: "03-02",
         layout: "talk",
-        bg: "bg_f1",
+        bg: "bg_f2",
         character: {
             key: "homo_9",   // images 对象里的 key
             x: 480,          // x 坐标
@@ -74,7 +74,7 @@ const pages_03 = [
                 scale: 1.2,
                 breathe: false
             },
-             {
+            {
                 key: "nean_3",
                 x: 1130,
                 y: 150,
@@ -95,7 +95,7 @@ const pages_03 = [
     {
         id: "03-05",
         layout: "talk",
-        bg: "bg_f1",
+        bg: "bg_f2",
         character: {
             key: "homo_9",   // images 对象里的 key
             x: 480,          // x 坐标
@@ -117,14 +117,14 @@ const pages_03 = [
     {
         id: "03-06",
         layout: "dialog",
-        bg: "bg_f1",
+        bg: "bg_f2",
         texts: {
             top: "Who are you? \nWhy are you here?",
             middle: "We mean no harm, just passing through.",
             bottom: "None of your business!"
         },
         keys: {
-            next: "n",
+            next: "y",
             nextId: "03-07",   //id of the next page
             prev: "p",
             prevId: "03-05"
@@ -133,30 +133,30 @@ const pages_03 = [
     {
         id: "03-07",
         layout: "dialog",
-        bg: "bg_f1",
+        bg: "bg_f2",
         texts: {
             top: "We saw you following the rabbits… \nAre you hunting our prey?",
             middle: "We caught just one, we share what we find.",
             bottom: "We need food, stay out of our way!"
         },
         keys: {
-            next: "n",
+            next: "y",
             nextId: "03-08",   //id of the next page
             prev: "p",
             prevId: "03-06"
         }
     },
-     {
+    {
         id: "03-08",
         layout: "dialog",
-        bg: "bg_f1",
+        bg: "bg_f2",
         texts: {
             top: "Do we work together or defend ourselves?",
             middle: "Let's help each other —\nwe can survive better together.",
             bottom: "We'll fight if we must!"
         },
         keys: {
-            next: "n",
+            next: "y",
             nextId: "03-09",   //id of the next page
             prev: "p",
             prevId: "03-07"
@@ -165,7 +165,7 @@ const pages_03 = [
     {
         id: "03-09",
         layout: "talk",
-        bg: "bg_f1",
+        bg: "bg_f2",
         character: {
             key: "homo_9",   // images 对象里的 key
             x: 480,          // x 坐标
@@ -181,13 +181,13 @@ const pages_03 = [
             next: "n",
             nextId: "04-01",   //id of the next page
             prev: "p",
-            prevId: "03-01"
+            prevId: "03-08"
         }
     },
 
 
 
 
-   
+
 ];
 
