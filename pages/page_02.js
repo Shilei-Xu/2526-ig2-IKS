@@ -30,7 +30,7 @@ const pages_02 = [
         ],
         keys: {
             next: "c",
-            nextId: "02-06",   //id of the next page
+            nextId: "02-02",   //id of the next page
             prev: "p",
             prevId: "01-06"
         }
