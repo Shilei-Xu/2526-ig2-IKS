@@ -124,7 +124,7 @@ const pages_03 = [
             bottom: "None of your business!"
         },
         keys: {
-            next: "y",
+            next: "e",
             nextId: "03-07",   //id of the next page
             prev: "p",
             prevId: "03-05"
@@ -140,7 +140,7 @@ const pages_03 = [
             bottom: "We need food, stay out of our way!"
         },
         keys: {
-            next: "y",
+            next: "e",
             nextId: "03-08",   //id of the next page
             prev: "p",
             prevId: "03-06"
@@ -156,7 +156,7 @@ const pages_03 = [
             bottom: "We'll fight if we must!"
         },
         keys: {
-            next: "y",
+            next: "e",
             nextId: "03-09",   //id of the next page
             prev: "p",
             prevId: "03-07"

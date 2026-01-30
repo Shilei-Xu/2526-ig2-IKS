@@ -138,7 +138,7 @@ const pages_05 = [
             next: "n",
             nextId: "05-07",   //id of the next page
             prev: "p",
-            prevId: "05-06"
+            prevId: "05-05"
         }
     },
 

@@ -30,7 +30,7 @@ const pages_02 = [
         ],
         keys: {
             next: "c",
-            nextId: "02-02",   //id of the next page
+            nextId: "02-06",   //id of the next page
             prev: "p",
             prevId: "01-06"
         }
@@ -94,7 +94,7 @@ const pages_02 = [
         ],
 
         keys: {
-            next: "t",
+            next: "w",
             nextId: "02-04",
             prev: "p",
             prevId: "02-02"
@@ -149,38 +149,38 @@ const pages_02 = [
   {
     id: "02-06",
     layout: "hunt",
-    bg: "bg_w1",
+    bg: "bg_fl",
     options: [
         {
             key: "Bun_1",
             highlightKey: "Bun_2",
-            x: 600,
-            y: 500,
+            x: 400,
+            y: 400,
             w: 300,
             h: 300,
-            rhythm: 2200
+            
         },
        {
             key: "Bun_3",
             highlightKey: "Bun_4",
-            x: 800,
-            y: 500,
-            w: 300,
-            h: 300,
-           // rhythm: 900
+            x: 1300,
+            y: 400,
+            w: 350,
+            h: 350,
+          
         },
         {
             key: "Bun_5",
             highlightKey: "Bun_6",
-            x: 1200,
-            y: 500,
+            x: 900,
+            y: 570,
             w: 600,
             h: 600,
-           // rhythm: 1500
+         
         }
     ],
     keys: {
-        keyMap: ["A", "S", "D"],   // 对应三只兔子
+        keyMap: ["q", "e", "w"],   // 对应三只兔子
         nextId: "02-07",           // 命中后翻页目标
         prevId: "02-05"            // 可选，保留上一页
     }

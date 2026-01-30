@@ -1,5 +1,5 @@
 const pages_01 = [
-  
+
     {
         id: "01-01",
         layout: "solo",
@@ -76,8 +76,8 @@ const pages_01 = [
         textMode: "instant",
 
         highlights: [
-        { x: 150, y: 620, r: 150, color: [254, 236, 190, 220] },
-        { x: 350, y: 620, r: 150, color: [254, 236, 190, 220] }
+            { x: 150, y: 620, r: 150, color: [254, 236, 190, 220] },
+            { x: 350, y: 620, r: 150, color: [254, 236, 190, 220] }
         ],
         keys: {
             next: "n",
@@ -112,20 +112,20 @@ const pages_01 = [
     {
         id: "01-05",
         layout: "video",
-        // bg: "bg_h3",
-        /*  video: {
-          key: "intro",
-          x: 0,
-          y: 0,
-          width: 960,
-          height: 540
-      }, */
+        bg: "bg_h3",
+        video: {
+            key: "intro",
+            x: 0,
+            y: 0,
+            width: 1920,
+            height: 1080,
+
+        },
         keys: {
             next: "n",
             nextId: "01-06",   //id of the next page
             prev: "p",
             prevId: "01-04",
-            // playVideo: "m"  // 按 m 播放视频
         }
     },
     {

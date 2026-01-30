@@ -4,20 +4,20 @@ let pages = [];
 let currentPage = 0;
 let popAnimations = {};
 
-
 let images = {};
 let videos = {}; // 全局存视频对象
 
 
 function preload() {
   preloadBGM();   // 
-  
+
   images.bg_f1 = loadImage("assets/Backgrounds/Feld_Nachmittag.png");
   images.bg_f2 = loadImage("assets/Backgrounds/Feld_Tag.png");
   images.bg_h1 = loadImage("assets/Backgrounds/Höhle_Nacht_Feuer.png");
   images.bg_h2 = loadImage("assets/Backgrounds/Höhle_Nacht.png");
   images.bg_h3 = loadImage("assets/Backgrounds/Höhle_Tag.png");
   images.bg_w1 = loadImage("assets/Backgrounds/Wald.png");
+  images.bg_fl = loadImage("assets/Backgrounds/Fluss.png");
 
   images.Bun_1 = loadImage("assets/Bunnies/bunny_1_bush.png");
   images.Bun_2 = loadImage("assets/Bunnies/bunny_1.png");
@@ -74,17 +74,32 @@ function preload() {
   fontText = loadFont("assets/fonts/GamjaFlower-Regular.ttf");
   fontUI = loadFont("assets/fonts/FreckleFace-Regular.ttf");
 
-  videos.intro = createVideo("assets/Video/Animation_Höhle.mp4");
+ /*  videos.intro = createVideo("assets/Video/Animation_Höhle.mp4");
   videos.intro.hide();      // 隐藏 DOM 元素，只用 canvas 绘制
-  videos.intro.loop();      // 循环播放
   videos.intro.volume(0); // 静音
   videos.intro.speed(2);
-}
+} */}
 
 function setup() {
   createCanvas(1920, 1080);
   pixelDensity(window.devicePixelRatio); // or pixelDensity(2);
   textFont(fontText); // text
+
+  videos.intro = createVideo("assets/Video/Animation_Höhle.mp4");
+  videos.intro.hide();        // 用 canvas 画
+  videos.intro.volume(0);     // 静音（必须在 play 前）
+  videos.intro.speed(2);
+
+  videos.introReady = false;
+
+  videos.intro.elt.onloadeddata = () => {
+    videos.introReady = true;
+  };
+
+
+  // 🔒 iOS / Chrome 必备
+  videos.intro.elt.setAttribute("playsinline", "");
+  videos.intro.elt.muted = true;
 
   pages = [
     ...pages_01,
@@ -110,7 +125,7 @@ function drawUIFrame() {
 
 function draw() {
   background(0);
-  image(videos.intro, 0, 0, width, height);
+ // image(videos.intro, 0, 0, width, height);
   let page = pages[currentPage];
 
 
@@ -138,9 +153,10 @@ function draw() {
     case "choice": drawChoiceLayout(page); break;
     case "dialog": drawDialogLayout(page); break;
     case "display": drawDisplayLayout(page); break;
-    
+
     case "video": drawVideoLayout(page.video); break;
     case "hunt": drawHuntLayout(page); break;
 
   }
+  
 }

@@ -1,4 +1,7 @@
 let selectedOptionIndex = -1;
+let mediaUnlocked = false;      // 用户交互解锁
+let playedPages = {};           // 记录每个 page.video.key 是否已播放过
+
 
 function goToPage(id) {
   let index = pages.findIndex(p => p.id === id);
@@ -12,6 +15,17 @@ function goToPage(id) {
 
     if (pages[currentPage].layout === "choice") {
       selectedOptionIndex = -1;
+    }
+    // ⭐⭐⭐ 加在这里：video 页面自动播放 ⭐⭐⭐
+
+    let page = pages[currentPage]; // 获取当前页面对象
+    if (page.layout === "video" && page.video) {
+      let v = videos[page.video.key];
+      if (mediaUnlocked && v && v.elt) {
+        v.time(0);
+        v.play();
+        v.volume(0);
+      }
     }
 
   } else {
@@ -33,7 +47,13 @@ function goToChapter(chapterNumber) {
 
 
 function keyPressed() {
-  
+  // ✅ 第一次用户按键解锁媒体
+  if (!mediaUnlocked) {
+    mediaUnlocked = true;
+    console.log("媒体解锁 ✅");
+  }
+
+
   // 🌟 章节快捷键（优先级最高）
   if (key === '1') { goToChapter(1); return; }
   if (key === '2') { goToChapter(2); return; }
@@ -44,22 +64,22 @@ function keyPressed() {
   let page = pages[currentPage];
 
   // 🌟 新增 whack3Keys 页面逻辑
-    if (page.layout === "hunt") {
-        const keyMap = page.keys.keyMap; // ["A","S","D"]
-        const index = keyMap.findIndex(k => k.toUpperCase() === key.toUpperCase());
+  if (page.layout === "hunt") {
+    const keyMap = page.keys.keyMap; // ["A","S","D"]
+    const index = keyMap.findIndex(k => k.toUpperCase() === key.toUpperCase());
 
-        if (index !== -1) {
-            const opt = page.options[index];
-            if (opt && opt.isPeek) {
-                // 命中 → 立即翻页
-                goToPage(page.keys.nextId);
-            } else {
-                // 没命中 → 可选反馈
-                console.log("Miss! Try again!");
-            }
-        }
-        return; // ⚠️ 命中或未命中都不执行原有翻页逻辑
+    if (index !== -1) {
+      const opt = page.options[index];
+      if (opt && opt.isPeek) {
+        // 命中 → 立即翻页
+        goToPage(page.keys.nextId);
+      } else {
+        // 没命中 → 可选反馈
+        console.log("Miss! Try again!");
+      }
     }
+    return; // ⚠️ 命中或未命中都不执行原有翻页逻辑
+  }
 
 
   // 🌟 如果是 choice 页面，优先处理 1/2/3 选择
@@ -83,17 +103,19 @@ function keyPressed() {
     goToPage(keys.prevId);
   }
 
-  // 播放视频逻辑
-   if (page.layout === "video" && page.video) {
-    if (key === page.keys.playVideo) {
-        let v = videos[page.video.key];
-        if (v) {
-            userStartAudio(); // 🔓 解锁音频
-            v.play();
-            v.volume(0);
-        }
+  // 播放视频逻辑（放在 keyPressed / page enter）
+  /* if (page.layout === "video" && page.video) {
+    let vkey = page.video.key;
+    let v = videos[vkey];
+
+    if (mediaUnlocked && v && v.elt && v.elt.paused) {
+      userStartAudio();   // 🔓
+
+      v.time(0);   // ⭐ 加这一行
+      v.play();
+      v.volume(0);
     }
-}
+  } */
 
 }
 

@@ -31,42 +31,42 @@ function drawTalkLayout(page) {
 
     // 开始画
     charList.forEach((c, index) => {
-    if (!images[c.key]) return;
+        if (!images[c.key]) return;
 
-    let charX = c.x;
-    let charY = c.y + (c.breathe ? breatheY : 0);
+        let charX = c.x;
+        let charY = c.y + (c.breathe ? breatheY : 0);
 
-    let finalScale = c.scale;
+        let finalScale = c.scale;
 
-    // 👇 pop 入场动画
-    if (c.pop) {
-        let id = page.id + "_" + index;
+        // 👇 pop 入场动画
+        if (c.pop) {
+            let id = page.id + "_" + index;
 
-        if (!popAnimations[id]) {
-            popAnimations[id] = new PopAnimator(500, 1.25);
+            if (!popAnimations[id]) {
+                popAnimations[id] = new PopAnimator(500, 1.25);
+            }
+
+            finalScale *= popAnimations[id].getScale();
         }
 
-        finalScale *= popAnimations[id].getScale();
-    }
+        drawImageContain(
+            images[c.key],
+            charX,
+            charY,
+            c.maxW,
+            c.maxH,
+            finalScale
+        );
+    });
 
-    drawImageContain(
-        images[c.key],
-        charX,
-        charY,
-        c.maxW,
-        c.maxH,
-        finalScale
-    );
-});
-
-// 👇 可选高光圆圈（呼吸闪烁）
+    // 👇 可选高光圆圈（呼吸闪烁）
     if (page.highlights) {
         push();
         noStroke();
 
         page.highlights.forEach((h, i) => {
             // 用正弦做 alpha 呼吸闪烁
-            let alpha = h.color[3] * (0.5 + 0.5 * sin(t * 1 )); 
+            let alpha = h.color[3] * (0.5 + 0.5 * sin(t * 1));
             fill(h.color[0], h.color[1], h.color[2], alpha);
             circle(h.x, h.y, h.r);
         });
@@ -169,7 +169,7 @@ function drawInfoLayout(page) {
 
 // 4.选择布局
 function drawChoiceLayout(page) {
-   
+
     for (let i = 0; i < page.options.length; i++) {
         const opt = page.options[i];
 
@@ -226,7 +226,6 @@ function drawDialogLayout(page) {
 
 }
 
-
 // 6.纯画面布局
 function drawDisplayLayout(page) {
     let t = millis() * 0.003;
@@ -251,28 +250,22 @@ function drawDisplayLayout(page) {
 
 }
 
-
-
 // 7.视频布局
 
 function drawVideoLayout(videoData) {
     if (!videoData) return;
 
-    // 创建视频对象（如果还没有创建过）
-    if (!videos[videoData.key]) {
-        videos[videoData.key] = createVideo(videoData.path);
-        videos[videoData.key].size(videoData.width, videoData.height);
-        videos[videoData.key].loop();  // 循环播放
-        videos[videoData.key].hide();  // 用 canvas 绘制，不显示 HTML 元素
+    let v = videos[videoData.key];
+    if (v && videos.introReady) {
+        image(v, videoData.x, videoData.y, videoData.width, videoData.height);
     }
 
-    // 绘制视频到 canvas
-    let v = videos[videoData.key];
-    image(v, videoData.x, videoData.y, videoData.width, videoData.height);
+    drawUIFrame();
 }
 
+
 //8.打兔子布局
-function drawHuntLayout(page) {
+/* function drawHuntLayout(page) {
 
     if (!page || !page.options || !Array.isArray(page.options)) return;
 
@@ -294,4 +287,35 @@ function drawHuntLayout(page) {
             drawImageContain(images[opt.highlightKey], opt.x, opt.y, opt.w, opt.h, 1);
         }
     });
+} */
+
+    function drawHuntLayout(page) {
+    if (!page || !page.options || !Array.isArray(page.options)) return;
+
+    const t = millis();
+
+    page.options.forEach(opt => {
+        // 1️⃣ 底图永远画
+        if (images[opt.key]) {
+            drawImageContain(images[opt.key], opt.x, opt.y, opt.w, opt.h, 1);
+        }
+
+        // 2️⃣ 初始化随机参数（只做一次）
+        if (opt._phase === undefined) {
+            opt._period = 3000 + Math.random() * 1500;          // 每个兔子周期随机 1.5~3 秒
+            opt._highlightDuration = 300 + Math.random() * 500; // 高亮持续时间随机 0.5~1 秒
+            opt._phase = Math.random() * opt._period;          // 初始偏移随机
+        }
+
+        // 3️⃣ 计算每个兔子的独立高亮状态
+        const localTime = (t + opt._phase) % opt._period;
+        const isPeek = localTime < opt._highlightDuration;
+        opt.isPeek = isPeek;
+
+        // 4️⃣ 高亮叠加
+        if (isPeek && images[opt.highlightKey]) {
+            drawImageContain(images[opt.highlightKey], opt.x, opt.y, opt.w, opt.h, 1);
+        }
+    });
 }
+
