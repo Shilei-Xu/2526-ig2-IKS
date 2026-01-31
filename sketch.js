@@ -156,6 +156,7 @@ function draw() {
 
     case "video": drawVideoLayout(page.video); break;
     case "hunt": drawHuntLayout(page); break;
+    case "neinfo": drawInfoNeLayout(page); break;
 
   }
   

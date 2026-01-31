@@ -32,7 +32,7 @@ const pages_03 = [
         ],
         keys: {
             next: "c",
-            nextId: "03-02",   //id of the next page
+            nextId: "03-04",   //id of the next page
             prev: "p",
             prevId: "02-07"
         }
@@ -90,6 +90,33 @@ const pages_03 = [
             nextId: "03-05",
             prev: "p",
             prevId: "03-02"
+        }
+    },
+    {
+        id: "03-04",
+        layout: "neinfo",
+        bg: "bg_h3",
+        /* character: {
+            key: "obj_7",   // images 对象里的 key
+            x: -200,          // x 坐标
+            y: 0,          // y 坐标
+            maxW: 1000,       // 最大宽度
+            maxH: 1000,       // 最大高度
+            scale: 1.5,      // 缩放
+            breathe: false    // 是否启用轻微上下浮动
+        }, */
+        text1: "Homo sapiens\nTime period : Appeared ~300,000 years ago, \nstill present today\nEarly humans lived in small groups, hunting, gathering, and making tools to survive. They were curious, creative, and able to adapt to different environments.\n\nTaller and slimmer body\nSmaller brow ridges\nSkilled at making tools, using fire, and creating art",
+        textMode1: "instant",
+        textBox1: { x: 120, y: 180, w: 550 },
+
+        text2: "Neanderthals \nTime period : ~400,000-40,000 years ago \nNeanderthals lived in cold regions, relying on big-game hunting and strong bodies to survive. They were tough, resourceful, and perfectly adapted to harsh climates.\n\nShorter and stockier build\nLarge brow ridges and strong bones\nGood at hunting big animals, very strong, adapted to cold climates",
+        textMode2: "instant",
+        textBox2: { x: 900, y: 360, w: 550 },
+        keys: {
+            next: "n",
+            nextId: "03-05",   //id of the next page
+            prev: "p",
+            prevId: "03-03"
         }
     },
     {

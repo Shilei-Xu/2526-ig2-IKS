@@ -265,31 +265,8 @@ function drawVideoLayout(videoData) {
 
 
 //8.打兔子布局
-/* function drawHuntLayout(page) {
 
-    if (!page || !page.options || !Array.isArray(page.options)) return;
-
-    const t = millis();
-
-    page.options.forEach(opt => {
-        // 1️⃣ 底图永远画
-        if (images[opt.key]) {
-            drawImageContain(images[opt.key], opt.x, opt.y, opt.w, opt.h, 1);
-        }
-
-        // 2️⃣ 高亮固定节奏
-        const period = 2000;            // 2秒为周期
-        const isPeek = (t % period) < 1000;  // 前1秒显示高亮
-        opt.isPeek = isPeek;
-
-        // 3️⃣ 高亮叠加
-        if (isPeek && images[opt.highlightKey]) {
-            drawImageContain(images[opt.highlightKey], opt.x, opt.y, opt.w, opt.h, 1);
-        }
-    });
-} */
-
-    function drawHuntLayout(page) {
+function drawHuntLayout(page) {
     if (!page || !page.options || !Array.isArray(page.options)) return;
 
     const t = millis();
@@ -319,3 +296,62 @@ function drawVideoLayout(videoData) {
     });
 }
 
+//9.neanderthal info layout
+function drawInfoNeLayout(page) {
+    let t = millis() * 0.003;
+    let breatheY = sin(t * 0.8) * 2;
+
+    // ===== 背景 UI =====
+    drawImageContain(images.ui_2, 80, 50, 1000, 800, 1.2);
+    drawImageContain(images.ui_2, 980, 50, 1000, 800, 1.2);
+    drawImageContain(images.nean_3, 950, 500, 400, 400, 1.3);
+    drawImageContain(images.homo_2, 600, 500, 400, 400, 1.3);
+    // ===== 角色 1 =====
+    if (page.character1 && images[page.character1.key]) {
+        let y1 = page.character1.y + (page.character1.breathe ? breatheY : 0);
+
+        drawImageContain(
+            images[page.character1.key],
+            page.character1.x,
+            y1,
+            page.character1.maxW,
+            page.character1.maxH,
+            page.character1.scale
+        );
+    }
+
+    // ===== 角色 2 =====
+    if (page.character2 && images[page.character2.key]) {
+        let y2 = page.character2.y + (page.character2.breathe ? breatheY : 0);
+
+        drawImageContain(
+            images[page.character2.key],
+            page.character2.x,
+            y2,
+            page.character2.maxW,
+            page.character2.maxH,
+            page.character2.scale
+        );
+    }
+
+    // ===== 文字框 1 =====
+    if (page.text1) {
+        if (page.textMode1 === "instant") {
+            text(page.text1, page.textBox1.x, page.textBox1.y, page.textBox1.w);
+        } else {
+            drawTypewriter(page.text1, page.textBox1.x, page.textBox1.y, page.textBox1.w);
+        }
+    }
+
+    // ===== 文字框 2 =====
+    if (page.text2) {
+        if (page.textMode2 === "instant") {
+            text(page.text2, page.textBox2.x, page.textBox2.y, page.textBox2.w);
+        } else {
+            drawTypewriter(page.text2, page.textBox2.x, page.textBox2.y, page.textBox2.w);
+        }
+    }
+
+    // ===== 箭头 =====
+    drawImageContain(images.ui_3, 1500, 750, 150, 150, 1.4);
+}
