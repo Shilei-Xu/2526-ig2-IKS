@@ -30,9 +30,9 @@ const pages_05 = [
         ],
         keys: {
             next: "c",
-            nextId: "05-02",   //id of the next page
+            nextId: "05-08",   //id of the next page
             prev: "p",
-            prevId: "04-01"
+            prevId: "04-09"
         }
     },
     {
@@ -59,6 +59,61 @@ const pages_05 = [
     },
     {
         id: "05-03",
+        layout: "solo2",
+        bg: "bg_h2",
+        keys: {
+            next: "c",
+            nextId: "05-04",   //id of the next page
+            prev: "p",
+            prevId: "05-02"
+        }
+    },
+     {
+        id: "05-04",
+        layout: "solo2",
+        bg: "bg_h1",
+        keys: {
+            next: "c",
+            nextId: "05-05",   //id of the next page
+            prev: "p",
+            prevId: "05-03"
+        }
+    },
+ {
+        id: "05-05",
+        layout: "display",
+        bg: "bg_h1",
+
+        images: [
+            {
+                key: "nean_1",
+                x: 580,
+                y: 500,
+                maxW: 300,
+                maxH: 400,
+                scale: 1.2,
+                breathe: true
+            },
+            {
+                key: "homo_3",
+                x: 1080,
+                y: 550,
+                maxW: 300,
+                maxH: 400,
+                scale: 1.2,
+                breathe: true
+            }
+        ],
+
+        keys: {
+            next: "c",
+            nextId: "05-06",
+            prev: "p",
+            prevId: "05-04"
+        }
+    },
+    {
+        id: "05-06",
         layout: "talk",
         bg: "bg_h2",
         character: {
@@ -74,13 +129,13 @@ const pages_05 = [
         textMode: "instant",
         keys: {
             next: "n",
-            nextId: "05-04",   //id of the next page
+            nextId: "05-07",   //id of the next page
             prev: "p",
-            prevId: "05-02"
+            prevId: "05-05"
         }
     },
     {
-        id: "05-04",
+        id: "05-07",
         layout: "choice",
         bg: "bg_h2",
         options: [
@@ -114,16 +169,48 @@ const pages_05 = [
         ],
         keys: {
             next: "n",
-            nextId: "05-06",   //id of the next page
+            nextId: "05-08",   //id of the next page
             prev: "p",
-            prevId: "05-03"
+            prevId: "05-06"
         }
     },
-    
+{
+        id: "05-08",
+        layout: "display",
+        bg: "bg_h1",
+
+        images: [
+            {
+                key: "homo_5",
+                x: 580,
+                y: 500,
+                maxW: 300,
+                maxH: 400,
+                scale: 1,
+                breathe: true
+            },
+            {
+                key: "homo_6",
+                x: 780,
+                y: 200,
+                maxW: 300,
+                maxH: 600,
+                scale: 1,
+                breathe: true
+            }
+        ],
+
+        keys: {
+            next: "c",
+            nextId: "05-09",
+            prev: "p",
+            prevId: "05-07"
+        }
+    },
     {
-        id: "05-06",
+        id: "05-09",
         layout: "talk",
-        bg: "bg_h2",
+        bg: "bg_h1",
         character: {
             key: "homo_6",   // images 对象里的 key
             x: 480,          // x 坐标
@@ -137,13 +224,14 @@ const pages_05 = [
         textMode: "instant",
         keys: {
             next: "n",
-            nextId: "05-07",   //id of the next page
+            nextId: "05-10",   //id of the next page
             prev: "p",
-            prevId: "05-05"
+            prevId: "05-08"
         }
     },
+    
  {
-        id: "05-07",
+        id: "05-10",
         layout: "solo2",
         bg: "bg_h2",
         texts: [
@@ -157,9 +245,9 @@ const pages_05 = [
         ],
         keys: {
             next: "c",
-            nextId: "01-01",   //id of the next page
+            nextId: null,   //id of the next page
             prev: "p",
-            prevId: "05-06"
+            prevId: "05-09"
         }
     },
    
