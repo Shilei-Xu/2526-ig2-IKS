@@ -119,6 +119,7 @@ const pages_05 = [
             prevId: "05-03"
         }
     },
+    
     {
         id: "05-06",
         layout: "talk",
@@ -141,7 +142,26 @@ const pages_05 = [
             prevId: "05-05"
         }
     },
-
+ {
+        id: "05-07",
+        layout: "solo2",
+        bg: "bg_h2",
+        texts: [
+           
+            {
+                content: "The End",
+                font: "ui",
+                size: 200,
+                y: 400
+            }
+        ],
+        keys: {
+            next: "c",
+            nextId: "01-01",   //id of the next page
+            prev: "p",
+            prevId: "05-06"
+        }
+    },
    
 ];
 

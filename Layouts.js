@@ -304,7 +304,7 @@ function drawInfoNeLayout(page) {
     // ===== 背景 UI =====
     drawImageContain(images.ui_2, 80, 50, 1000, 800, 1.2);
     drawImageContain(images.ui_2, 980, 50, 1000, 800, 1.2);
-    drawImageContain(images.nean_3, 950, 500, 400, 400, 1.3);
+    drawImageContain(images.nean_3, 850, 500, 400, 400, 1.3);
     drawImageContain(images.homo_2, 600, 500, 400, 400, 1.3);
     // ===== 角色 1 =====
     if (page.character1 && images[page.character1.key]) {
@@ -354,4 +354,32 @@ function drawInfoNeLayout(page) {
 
     // ===== 箭头 =====
     drawImageContain(images.ui_3, 1500, 750, 150, 150, 1.4);
+}
+
+//10.开屏布局
+function drawSolo2Layout(page) {
+    if (!page.texts) return;
+
+    push();
+    textAlign(CENTER, TOP);
+
+   
+
+    push();
+    noStroke();
+    for (let t of page.texts) {
+        textFont(t.font === "ui" ? fontUI : fontText);
+        textSize(t.size || 28);
+
+        if (t.color) fill(...t.color);
+        else fill('#FFEDB2');
+
+        text(
+            t.content,
+            width / 2,     // x 居中
+            t.y || 200,    // y
+        );
+    }
+    pop();
+    pop();
 }

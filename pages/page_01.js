@@ -1,4 +1,24 @@
 const pages_01 = [
+    {
+        id: "00-01",
+        layout: "solo2",
+        bg: "bg_00",
+        texts: [
+           
+            {
+                content: "Play",
+                font: "ui",
+                size: 60,
+                y: 840
+            }
+        ],
+        keys: {
+            next: "c",
+            nextId: "01-01",   //id of the next page
+            prev: "p",
+            prevId: null
+        }
+    },
 
     {
         id: "01-01",
@@ -33,7 +53,7 @@ const pages_01 = [
             next: "c",
             nextId: "01-02",   //id of the next page
             prev: "p",
-            prevId: null
+            prevId: "00-01"
         }
     },
 

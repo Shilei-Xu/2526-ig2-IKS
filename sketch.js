@@ -18,6 +18,7 @@ function preload() {
   images.bg_h3 = loadImage("assets/Backgrounds/Höhle_Tag.png");
   images.bg_w1 = loadImage("assets/Backgrounds/Wald.png");
   images.bg_fl = loadImage("assets/Backgrounds/Fluss.png");
+  images.bg_00 = loadImage("assets/Backgrounds/00-02.png");
 
   images.Bun_1 = loadImage("assets/Bunnies/bunny_1_bush.png");
   images.Bun_2 = loadImage("assets/Bunnies/bunny_1.png");
@@ -125,7 +126,7 @@ function drawUIFrame() {
 
 function draw() {
   background(0);
- // image(videos.intro, 0, 0, width, height);
+  // image(videos.intro, 0, 0, width, height);
   let page = pages[currentPage];
 
 
@@ -149,6 +150,7 @@ function draw() {
   switch (page.layout) {
     case "talk": drawTalkLayout(page); break;
     case "solo": drawSoloLayout(page); break;
+    case "solo2": drawSolo2Layout(page); break;
     case "info": drawInfoLayout(page); break;
     case "choice": drawChoiceLayout(page); break;
     case "dialog": drawDialogLayout(page); break;
@@ -159,5 +161,5 @@ function draw() {
     case "neinfo": drawInfoNeLayout(page); break;
 
   }
-  
+
 }

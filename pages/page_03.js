@@ -32,7 +32,7 @@ const pages_03 = [
         ],
         keys: {
             next: "c",
-            nextId: "03-04",   //id of the next page
+            nextId: "03-02",   //id of the next page
             prev: "p",
             prevId: "02-07"
         }
@@ -105,13 +105,13 @@ const pages_03 = [
             scale: 1.5,      // 缩放
             breathe: false    // 是否启用轻微上下浮动
         }, */
-        text1: "Homo sapiens\nTime period : Appeared ~300,000 years ago, \nstill present today\nEarly humans lived in small groups, hunting, gathering, and making tools to survive. They were curious, creative, and able to adapt to different environments.\n\nTaller and slimmer body\nSmaller brow ridges\nSkilled at making tools, using fire, and creating art",
+        text1: "Homo sapiens\nTime period : Appeared ~300,000 years ago, \nstill present today\nEarly humans lived in small groups, hunting, gathering, and making tools to survive. They were curious, creative, and able to adapt to different environments.\n\n· Taller and slimmer body\n· Smaller brow ridges\n· Skilled at making tools, using fire, and creating art",
         textMode1: "instant",
-        textBox1: { x: 120, y: 180, w: 550 },
+        textBox1: { x: 160, y: 180, w: 550 },
 
-        text2: "Neanderthals \nTime period : ~400,000-40,000 years ago \nNeanderthals lived in cold regions, relying on big-game hunting and strong bodies to survive. They were tough, resourceful, and perfectly adapted to harsh climates.\n\nShorter and stockier build\nLarge brow ridges and strong bones\nGood at hunting big animals, very strong, adapted to cold climates",
+        text2: "Neanderthals \nTime period : ~400,000-40,000 years ago \nNeanderthals lived in cold regions, relying on big-game hunting and strong bodies to survive. They were tough, resourceful, and perfectly adapted to harsh climates.\n\n· Shorter and stockier build\n· Large brow ridges and strong bones\n· Good at hunting big animals, very strong, adapted to cold climates",
         textMode2: "instant",
-        textBox2: { x: 900, y: 360, w: 550 },
+        textBox2: { x: 1100, y: 180, w: 550 },
         keys: {
             next: "n",
             nextId: "03-05",   //id of the next page
