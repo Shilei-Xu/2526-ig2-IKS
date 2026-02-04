@@ -95,14 +95,25 @@ function keyPressed() {
 
 
   // 🌟 如果是 choice 页面，优先处理 1/2/3 选择
-  if (page.layout === "choice" && page.options) {
+  // 🌟 如果是 choice 页面，优先处理 1/2/3 选择
+if (page.layout === "choice" && page.options) {
     for (let i = 0; i < page.options.length; i++) {
-      if (key === page.options[i].selectKey) {
-        selectedOptionIndex = i;
-        return; // ⚠️ 选项页不再继续执行翻页逻辑
-      }
+        if (key === page.options[i].selectKey) {
+            selectedOptionIndex = i; // ✅ 先高亮显示选中项
+
+            // 🔹 延迟跳转，让高亮效果可见
+            if (page.options[i].nextId) {
+                setTimeout(() => {
+                    goToPage(page.options[i].nextId);
+                }, 400); // 延迟 250ms，你可以调整时间
+            }
+
+            return; // ⚠️ 处理完选项后不再执行原有翻页逻辑
+        }
     }
-  }
+}
+
+
 
   // ===== 原本的翻页逻辑（保持不变）=====
   let keys = page.keys || {};

@@ -125,7 +125,7 @@ const pages_05 = [
             scale: 1.5,      // 缩放
             breathe: true    // 是否启用轻微上下浮动
         },
-        text: "We should make some paint to capture today's experiences.\nLet's pick an ingredient that could work for RED dye.",
+        text: "We should make some paint to capture today's experiences.\nLet's pick an ingredient that could work for BLACK dye.",
         textMode: "instant",
         keys: {
             next: "n",
@@ -147,6 +147,7 @@ const pages_05 = [
                 w: 300,
                 h: 300,
                 selectKey: "q"
+                
             },
             {
                 key: "obj_5",
@@ -180,7 +181,7 @@ const pages_05 = [
         bg: "bg_05",
 
         keys: {
-            next: "c",
+            next: "n",
             nextId: "05-09",
             prev: "p",
             prevId: "05-07"

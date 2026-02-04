@@ -69,7 +69,8 @@ const pages_04 = [
                 y: 400,
                 w: 400,
                 h: 400,
-                selectKey: "q"
+                selectKey: "q",
+                nextId: "04-04"
             },
             {
                 key: "obj_2",
@@ -78,7 +79,8 @@ const pages_04 = [
                 y: 400,
                 w: 400,
                 h: 400,
-                selectKey: "w"
+                selectKey: "w",
+                nextId: "04-05"
             },
             {
                 key: "obj_3",
@@ -87,18 +89,41 @@ const pages_04 = [
                 y: 400,
                 w: 400,
                 h: 400,
-                selectKey: "e"
+                selectKey: "e",
+                nextId: "04-04"
             }
         ],
+        showArrows: false,  // 不显示箭头
         keys: {
-            next: "n",
-            nextId: "04-04",   //id of the next page
+            
             prev: "p",
             prevId: "04-02"
         }
     },
     {
         id: "04-04",
+        layout: "talk",
+        bg: "bg_f1",
+        character: {
+            key: "homo_9",   // images 对象里的 key
+            x: 480,          // x 坐标
+            y: 430,          // y 坐标
+            maxW: 400,       // 最大宽度
+            maxH: 400,       // 最大高度
+            scale: 1.5,      // 缩放
+            breathe: true    // 是否启用轻微上下浮动
+        },
+        text: "This one has too many branches, its main branch is too uneven for a bow,\ntry a different one",
+        textMode: "instant",
+        keys: {
+            next: "n",
+            nextId: "04-03",   //id of the next page
+            prev: "p",
+            prevId: "04-01"
+        }
+    },
+    {
+        id: "04-05",
         layout: "info",
         bg: "bg_f1",
         character: {
@@ -114,13 +139,13 @@ const pages_04 = [
         textMode: "instant",
         keys: {
             next: "n",
-            nextId: "04-05",   //id of the next page
+            nextId: "04-06",   //id of the next page
             prev: "p",
-            prevId: "04-03"
+            prevId: "04-04"
         }
     },
     {
-        id: "04-05",
+        id: "04-06",
         layout: "display",
         bg: "bg_f1",
 
@@ -138,13 +163,13 @@ const pages_04 = [
 
         keys: {
             next: "n",
-            nextId: "04-06",
+            nextId: "04-07",
             prev: "p",
-            prevId: "04-04"
+            prevId: "04-05"
         }
     },
     {
-        id: "04-06",
+        id: "04-07",
         layout: "talk",
         bg: "bg_f1",
         character: {
@@ -164,7 +189,7 @@ const pages_04 = [
             next: "5",
             nextId: "05-01",   //id of the next page
             prev: "p",
-            prevId: "04-05"
+            prevId: "04-06"
         }
     },
 
