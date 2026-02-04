@@ -81,7 +81,12 @@ function drawTalkLayout(page) {
     }
 
     // 下一页箭头
-    drawImageContain(images.ui_3, 1600, 830, 150, 150, 1.4);
+    //drawImageContain(images.ui_3, 1600, 830, 150, 150, 1.4);
+
+    // 下一页箭头，根据 page.ui 来选择
+    let arrowKey = page.ui === "end" ? "ui_5" : "ui_3";  // ui_3 原来的普通箭头
+    drawImageContain(images[arrowKey], 1600, 830, 150, 150, 1.4);
+
 }
 
 
@@ -163,7 +168,11 @@ function drawInfoLayout(page) {
             drawTypewriter(page.text, 1100, 220, 600);
         }
         //箭头
-        drawImageContain(images.ui_3, 1500, 750, 150, 150, 1.4);
+        //drawImageContain(images.ui_3, 1500, 750, 150, 150, 1.4);
+
+        // 下一页箭头，根据 page.ui 来选择
+        let arrowKey = page.ui === "end" ? "ui_5" : "ui_3";  // ui_3 原来的普通箭头
+        drawImageContain(images[arrowKey], 1500, 750, 150, 150, 1.4);
     }
 }
 
@@ -195,8 +204,13 @@ function drawChoiceLayout(page) {
             );
         }
     }
+    //drawImageContain(images.ui_6, 1630, 860, 200, 100, 1.2);
+    //drawImageContain(images.ui_3, 1600, 830, 150, 150, 1.4);
+
+    if (page.showArrows !== false) {
     drawImageContain(images.ui_6, 1630, 860, 200, 100, 1.2);
     drawImageContain(images.ui_3, 1600, 830, 150, 150, 1.4);
+}
 }
 
 // 5.尼人对话布局
@@ -249,8 +263,10 @@ function drawDisplayLayout(page) {
             );
         }
     }
+    if (page.showArrows !== false) {
     drawImageContain(images.ui_6, 1630, 860, 200, 100, 1.2);
     drawImageContain(images.ui_3, 1600, 830, 150, 150, 1.4);
+}
 
 }
 

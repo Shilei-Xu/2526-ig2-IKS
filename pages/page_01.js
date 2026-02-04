@@ -194,6 +194,7 @@ const pages_01 = [
         ],
         text: "Nice! Your new stone tool is ready to use!\nTime to move on! Flip the page to start the next chapter. ",
         textMode: "instant",
+        ui: "end",   // 表示使用最后一页箭头
         keys: {
             next: "2",
             nextId: "02-01",   //id of the next page

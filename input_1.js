@@ -7,12 +7,6 @@ function goToPage(id) {
   let index = pages.findIndex(p => p.id === id);
 
   if (index !== -1) {
-    // Prüfen ob wir bereits auf dieser Seite sind
-    if (currentPage === index) {
-      console.log(`ℹ️ Bereits auf Seite ${id}`);
-      return;
-    }
-    
     currentPage = index;
     resetText();
 
@@ -34,8 +28,6 @@ function goToPage(id) {
       }
     }
 
-    console.log(`✅ Seite gewechselt zu: ${id} (Index: ${index})`);
-
   } else {
     console.warn("找不到页面 id:", id);
   }
@@ -55,9 +47,6 @@ function goToChapter(chapterNumber) {
 
 
 function keyPressed() {
-  // Aktivität registrieren (für Idle-Timer)
-  updateActivity();
-  
   // ✅ 第一次用户按键解锁媒体
   if (!mediaUnlocked) {
     mediaUnlocked = true;
@@ -65,13 +54,12 @@ function keyPressed() {
   }
 
 
-  // 🌟 章节快捷键 / Barcode Scanner (优先级最高)
-  // Verwendet handleBarcodeInput() um wiederholte Scans zu ignorieren
-  if (key === '1') { handleBarcodeInput(1); return; }
-  if (key === '2') { handleBarcodeInput(2); return; }
-  if (key === '3') { handleBarcodeInput(3); return; }
-  if (key === '4') { handleBarcodeInput(4); return; }
-  if (key === '5') { handleBarcodeInput(5); return; }
+  // 🌟 章节快捷键（优先级最高）
+  if (key === '1') { goToChapter(1); return; }
+  if (key === '2') { goToChapter(2); return; }
+  if (key === '3') { goToChapter(3); return; }
+  if (key === '4') { goToChapter(4); return; }
+  if (key === '5') { goToChapter(5); return; }
 
   let page = pages[currentPage];
 
@@ -139,3 +127,5 @@ function nextPage() {
 function prevPage() {
   if (currentPage > 0) { currentPage--; resetText(); }
 }
+
+

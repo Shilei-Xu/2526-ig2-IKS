@@ -92,6 +92,7 @@ const pages_02 = [
                 breathe: false
             }
         ],
+        showArrows: false,  // 或 false
 
         keys: {
             next: "w",
@@ -201,6 +202,7 @@ const pages_02 = [
         },
         text: "You caught a rabbit! Tonight, we might have a proper meal.\n\nEarly humans relied on hunting small animals, gathering fruits, roots, and nuts-they had to be clever to find enough food each day!\n\nAlright, let's turn the page to the next chapter and continue our adventure!",
         textMode: "instant",
+        ui: "end",   // 表示使用最后一页箭头
         keys: {
             next: "3",
             nextId: "03-01",   //id of the next page

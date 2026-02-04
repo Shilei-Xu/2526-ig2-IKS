@@ -204,6 +204,8 @@ const pages_03 = [
         },
         text: "The Neanderthals seem angry. \nFlip the page and find out what comes next.",
         textMode: "instant",
+        ui: "end",   // 表示使用最后一页箭头
+
         keys: {
             next: "4",
             nextId: "04-01",   //id of the next page

@@ -130,7 +130,7 @@ function draw() {
   background(0);
   // image(videos.intro, 0, 0, width, height);
   let page = pages[currentPage];
-
+  checkIdleTimeout();
 
   // if (images[page.bg]) image(images[page.bg], 0, 0);
 

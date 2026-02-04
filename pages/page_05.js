@@ -106,7 +106,7 @@ const pages_05 = [
         ],
 
         keys: {
-            next: "c",
+            next: "n",
             nextId: "05-06",
             prev: "p",
             prevId: "05-04"
@@ -213,7 +213,7 @@ const pages_05 = [
         ],
 
         keys: {
-            next: "c",
+            next: "n",
             nextId: "05-10",
             prev: "p",
             prevId: "05-08"
