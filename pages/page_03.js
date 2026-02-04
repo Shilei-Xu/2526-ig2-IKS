@@ -205,7 +205,7 @@ const pages_03 = [
         text: "The Neanderthals seem angry. \nFlip the page and find out what comes next.",
         textMode: "instant",
         keys: {
-            next: "n",
+            next: "4",
             nextId: "04-01",   //id of the next page
             prev: "p",
             prevId: "03-08"

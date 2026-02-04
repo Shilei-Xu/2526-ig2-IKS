@@ -53,6 +53,7 @@ function preload() {
   images.ui_3 = loadImage("assets/UI/ui_1.png");
   images.ui_4 = loadImage("assets/UI/ui_2.png");
   images.ui_5 = loadImage("assets/UI/ui_3.png");
+  images.ui_6 = loadImage("assets/UI/text_leather_large2.png");
 
   images.obj_1 = loadImage("assets/Objects/twig_1.png");
   images.hlobj_1 = loadImage("assets/Objects/selected/twig_1_selected.png");

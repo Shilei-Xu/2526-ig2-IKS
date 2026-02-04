@@ -1,4 +1,22 @@
 const pages_01 = [
+     {
+        id: "00-00",
+        layout: "solo2",
+        texts: [
+           
+            {
+                content: "A tool from the depths of time is calling me… \nOpen the book, and see how early humans lived.",
+                size: 50,
+                y: 440
+            }
+        ],
+        keys: {
+            next: "1",
+            nextId: "01-01",   //id of the next page
+            prev: "p",
+            prevId: null
+        }
+    },
     {
         id: "00-01",
         layout: "solo2",
@@ -177,7 +195,7 @@ const pages_01 = [
         text: "Nice! Your new stone tool is ready to use!\nTime to move on! Flip the page to start the next chapter. ",
         textMode: "instant",
         keys: {
-            next: "n",
+            next: "2",
             nextId: "02-01",   //id of the next page
             prev: "p",
             prevId: "01-05"

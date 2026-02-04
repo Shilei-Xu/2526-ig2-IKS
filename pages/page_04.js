@@ -159,7 +159,7 @@ const pages_04 = [
         text: "You've taken back your hunt from the Neanderthals-victory is yours!\nTurn the page and relax for the night.",
         textMode: "instant",
         keys: {
-            next: "n",
+            next: "5",
             nextId: "05-01",   //id of the next page
             prev: "p",
             prevId: "04-05"

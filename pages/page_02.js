@@ -202,7 +202,7 @@ const pages_02 = [
         text: "You caught a rabbit! Tonight, we might have a proper meal.\n\nEarly humans relied on hunting small animals, gathering fruits, roots, and nuts-they had to be clever to find enough food each day!\n\nAlright, let's turn the page to the next chapter and continue our adventure!",
         textMode: "instant",
         keys: {
-            next: "n",
+            next: "3",
             nextId: "03-01",   //id of the next page
             prev: "p",
             prevId: "02-06"

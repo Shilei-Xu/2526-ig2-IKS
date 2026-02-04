@@ -195,6 +195,7 @@ function drawChoiceLayout(page) {
             );
         }
     }
+    drawImageContain(images.ui_3, 1600, 830, 150, 150, 1.4);
 }
 
 // 5.尼人对话布局
@@ -247,6 +248,7 @@ function drawDisplayLayout(page) {
             );
         }
     }
+    drawImageContain(images.ui_3, 1600, 830, 150, 150, 1.4);
 
 }
 
@@ -261,6 +263,8 @@ function drawVideoLayout(videoData) {
     }
 
     drawUIFrame();
+    drawImageContain(images.ui_6, 1630, 860, 200, 100, 1.2);
+    drawImageContain(images.ui_3, 1600, 830, 150, 150, 1.4);
 }
 
 
@@ -363,7 +367,7 @@ function drawSolo2Layout(page) {
     push();
     textAlign(CENTER, TOP);
 
-   
+
 
     push();
     noStroke();
